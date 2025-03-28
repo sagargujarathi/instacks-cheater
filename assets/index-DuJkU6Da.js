@@ -1,1 +1,0 @@
-var _=(E=>(E.SECRET_KEY="SECRET_KEY",E.GENERATE_KEY="GENERATE_KEY",E.AUTO_SELECT_KEY="AUTO_SELECT_KEY",E))(_||{});const T="<base_url>/api/v1/user/write_assessment/<id>",s=["E","F","T"],A=["D","G","Y"];export{A,s as G,T as I,_ as K};

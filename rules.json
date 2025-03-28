@@ -13,10 +13,30 @@
   {
     "id": 2,
     "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "https://anurag.instacks.co/api/v1/user/exam/recordViolation",
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "https://demo.proctoring.online/sdk/supervisor.js",
       "resourceTypes": ["script"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "https://www.google-analytics.com/g/collect*",
+      "resourceTypes": ["xmlhttprequest"]
     }
   }
 ]

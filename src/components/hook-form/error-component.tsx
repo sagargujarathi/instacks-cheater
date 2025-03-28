@@ -1,4 +1,3 @@
-import { Stack, Typography } from "@mui/material";
 import AlertIcon from "../../assets/icons/alert-icon";
 
 interface IErrorComponentType {
@@ -8,10 +7,10 @@ interface IErrorComponentType {
 
 const ErrorComponent = ({ message }: IErrorComponentType) => {
   return (
-    <Stack direction="row" gap={0.5} alignItems="center" flexWrap="wrap">
-      <AlertIcon />
-      <Typography variant="caption">{message}</Typography>
-    </Stack>
+    <div className="flex items-center gap-1 text-red-600">
+      <AlertIcon className="w-3.5 h-3.5" />
+      <span className="text-xs">{message}</span>
+    </div>
   );
 };
 

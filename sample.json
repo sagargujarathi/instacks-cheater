@@ -1,1271 +1,1547 @@
 {
   "exam_details": {
-    "id": "m4zd4a57",
-    "name": "22-Dec-2024_Test-02",
-    "duration": 30,
-    "exam_type": "single",
-    "cutoff_type": "single",
+    "id": "lilje3iu",
+    "name": "Mock Test-01",
+    "duration": 25,
+    "exam_type": "sectional",
+    "cutoff_type": "sectional",
     "is_linear": 0,
     "proctoring": 0,
     "restrict_tab_switch": 1,
     "tab_switch_count": 5,
     "tab_switch_warning": 1,
-    "duration_left": 1688
+    "duration_left": 968
   },
   "exam_models": [
     {
-      "id": "m4zd4a5a",
-      "model_name": "MCQ",
-      "ques_count": 20,
-      "duration": 0,
+      "id": "lilje3kh",
+      "model_name": "Part-A Verbal Ability",
+      "ques_count": 25,
+      "duration": 25,
       "questions": [
         {
-          "id": "m4eh8jma",
+          "id": "kyw2ceiy",
           "type": "single_option",
           "positive_mark": 1,
           "negative_mark": 0,
           "options": [
             {
               "id": "option_1",
-              "option": "DriverManager"
+              "option": "<p>None of the student</p>"
             },
             {
               "id": "option_2",
-              "option": "Connection"
+              "option": "<p>in the class</p>"
             },
             {
               "id": "option_3",
-              "option": "Statement"
+              "option": "<p>&nbsp;scored below the</p>"
             },
             {
               "id": "option_4",
-              "option": "ResultSet"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which class is used to establish a connection in the JDBC API?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "DriverManager",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "Connection",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "Statement",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "ResultSet",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "The DriverManager class provides a method getConnection() to establish a connection with the database.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4eh8jmf",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "Type 1"
-            },
-            {
-              "id": "option_2",
-              "option": "Type 2"
-            },
-            {
-              "id": "option_3",
-              "option": "Type 3"
-            },
-            {
-              "id": "option_4",
-              "option": "Type 4"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_4",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which JDBC driver type is known as the \"Thin Driver\"?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "Type 1",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "Type 2",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "Type 3",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "Type 4",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "Type 4 is called the \"Thin Driver\" because it is a pure Java driver that directly converts JDBC calls to the database-specific protocol.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4p4wf4p",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p>Type-1 Driver</p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p>Type-2 Driver</p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p>Type-3 Driver</p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>Type-4 Driver</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_2",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>Which type of JDBC driver translates JDBC method calls into native API calls of the database and requires database vendor-specific libraries?</p>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p>Type-1 Driver</p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p>Type-2 Driver</p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p>Type-3 Driver</p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p>Type-4 Driver</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>ype-2 drivers, also known as \"Native-API drivers,\" convert JDBC calls into native calls specific to the database using vendor-provided client libraries. They are platform-dependent.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T04:57:04.000Z",
-          "updated_at": "2024-12-15T04:57:04.000Z"
-        },
-        {
-          "id": "m4p53bik",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p>Prints <code>Rows affected: 0</code></p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p>Prints <code>Rows affected: 1</code></p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p>Compilation error</p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>Runtime error</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_2",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What will happen if the following statement is executed, assuming <code>employees</code> table exists?</p>\r\n<pre class=\"language-java\"><code>Statement stmt = con.createStatement();\r\nString query = \"INSERT INTO employees (id, name) VALUES (1, 'John')\";\r\nint rowsAffected = stmt.executeUpdate(query);\r\nSystem.out.println(\"Rows affected: \" + rowsAffected);\r\n</code></pre>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p>Prints <code>Rows affected: 0</code></p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p>Prints <code>Rows affected: 1</code></p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p>Compilation error</p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p>Runtime error</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>The <code>executeUpdate</code> method is used for DML statements like <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>. It returns the number of rows affected by the query. Since one row is inserted, it prints <code>Rows affected: 1</code>.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T05:02:26.000Z",
-          "updated_at": "2024-12-15T05:02:26.000Z"
-        },
-        {
-          "id": "m4p4xxbv",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p>The above code snippet is correct and will connect to the database.</p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p>You need to register the driver first using <code>Class.forName(\"com.mysql.cj.jdbc.Driver\")</code>.</p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p>You must use <code>DriverManager.registerDriver()</code> before calling <code>getConnection()</code>.</p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>Both 2 and 3.</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above.</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>Which of the following is the correct way to establish a connection to a database using JDBC?</p>\r\n<pre class=\"language-java\"><code>String url = \"jdbc:mysql://localhost:3306/employees\";\r\nConnection con = DriverManager.getConnection(url, \"user\", \"password\");\r\n</code></pre>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p>The above code snippet is correct and will connect to the database.</p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p>You need to register the driver first using <code>Class.forName(\"com.mysql.cj.jdbc.Driver\")</code>.</p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p>You must use <code>DriverManager.registerDriver()</code> before calling <code>getConnection()</code>.</p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p>Both 2 and 3.</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above.</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>For older JDBC versions, explicitly registering the driver with <code>Class.forName()</code> ensures that the driver is loaded into memory. However, in JDBC 4.0+, this step is optional if the driver is on the classpath.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T04:58:15.000Z",
-          "updated_at": "2024-12-15T04:58:15.000Z"
-        },
-        {
-          "id": "m4eh8jmr",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "It only executes SELECT queries."
-            },
-            {
-              "id": "option_2",
-              "option": "It can execute both queries and updates."
-            },
-            {
-              "id": "option_3",
-              "option": "It does not return any result."
-            },
-            {
-              "id": "option_4",
-              "option": "It is only used with PreparedStatement."
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_2",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which of the following statements is true about execute() in JDBC?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "It only executes SELECT queries.",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "It can execute both queries and updates.",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "It does not return any result.",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "It is only used with PreparedStatement.",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "The execute() method can be used to execute any SQL statement, and it returns a boolean indicating whether the result is a ResultSet.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4p512s2",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p><code>CallableStatement cs = con.prepareCall(\"{CALL getEmployeeCount}\");</code></p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p><code>CallableStatement cs = con.prepareCall(\"{? = CALL getEmployeeCount}\");</code></p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p><code>CallableStatement cs = con.prepareCall(\"{CALL getEmployeeCount()}\");</code></p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>Both 1 and 3</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_4",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What is the correct syntax to call a stored procedure named <code>getEmployeeCount</code> that takes no parameters and returns a single integer?</p>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p><code>CallableStatement cs = con.prepareCall(\"{CALL getEmployeeCount}\");</code></p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p><code>CallableStatement cs = con.prepareCall(\"{? = CALL getEmployeeCount}\");</code></p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p><code>CallableStatement cs = con.prepareCall(\"{CALL getEmployeeCount()}\");</code></p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p>Both 1 and 3</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>In JDBC, <code>{CALL procedure_name}</code> or <code>{CALL procedure_name()}</code> is valid syntax for calling stored procedures. The parentheses are optional if no parameters are involved.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T05:00:42.000Z",
-          "updated_at": "2024-12-15T05:00:42.000Z"
-        },
-        {
-          "id": "m4eh8jmi",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "jdbc:mysql://localhost:3306/testdb"
-            },
-            {
-              "id": "option_2",
-              "option": "mysql:jdbc://localhost:3306/testdb"
-            },
-            {
-              "id": "option_3",
-              "option": "jdbc:mysql:localhost/testdb"
-            },
-            {
-              "id": "option_4",
-              "option": "mysql://localhost:3306/testdb"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "What is a valid JDBC URL for connecting to a MySQL database named testdb running on localhost?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "jdbc:mysql://localhost:3306/testdb",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "mysql:jdbc://localhost:3306/testdb",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "jdbc:mysql:localhost/testdb",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "mysql://localhost:3306/testdb",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "The correct syntax for a MySQL JDBC URL is jdbc:mysql://&lt;host&gt;:&lt;port&gt;/&lt;database_name&gt;. Here, localhost is the host, 3306 is the default port, and testdb is the database name.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4eh8jmc",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "executeQuery()"
-            },
-            {
-              "id": "option_2",
-              "option": "executeUpdate()"
-            },
-            {
-              "id": "option_3",
-              "option": "executeBatch()"
-            },
-            {
-              "id": "option_4",
-              "option": "execute()"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_2",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which method is used to execute an SQL query that does not return a result set?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "executeQuery()",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "executeUpdate()",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "executeBatch()",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "execute()",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "The executeUpdate() method is used for SQL statements such as INSERT, UPDATE, and DELETE, which do not return a result set.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4p58r47",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p>Compilation error</p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p>No products found.</p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p>Products found.</p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>Runtime error</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
+              "option": "<p>&nbsp;given cut-off marks.</p>"
             }
           ],
           "question_type": "text_questions",
           "student_answer": null,
           "time_spent": 0,
           "marked_for_review": null,
-          "chapter_id": "m4p4vce9",
+          "chapter_id": "kyw2ceix",
           "paragraph_id": null,
           "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What will the following code output?</p>\r\n<pre class=\"language-java\"><code>String sql = \"SELECT * FROM products WHERE price &gt; ? AND category = ?\";  \r\nPreparedStatement pstmt = con.prepareStatement(sql);  \r\npstmt.setDouble(1, 50.0);  \r\npstmt.setString(2, \"Electronics\");  \r\nResultSet rs = pstmt.executeQuery();  \r\nif (!rs.next()) {  \r\n    System.out.println(\"No products found.\");  \r\n} else {  \r\n    System.out.println(\"Products found.\");  \r\n}\r\n</code></pre>",
+          "reference": "LP_Verbal_Common_Errors_01_TestPaper_01",
+          "question": "<p>Read each sentence to find out whether is there any grammatical error in it. The error if any part of the sentence, the option given in that part will be the answer.&nbsp;</p>",
           "question_image": null,
           "num_options": 0,
-          "option_1": "<p>Compilation error</p>",
+          "option_1": "<p>None of the student</p>",
           "option_1_image": null,
           "option_1_partial": null,
-          "option_2": "<p>No products found.</p>",
+          "option_2": "<p>in the class</p>",
           "option_2_image": null,
           "option_2_partial": null,
-          "option_3": "<p>Products found.</p>",
+          "option_3": "<p>&nbsp;scored below the</p>",
           "option_3_image": null,
           "option_3_partial": null,
-          "option_4": "<p>Runtime error</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>The output depends on the database contents. If there are products matching the query, it prints <code>Products found.</code> Otherwise, it prints <code>No products found.</code></p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T05:06:40.000Z",
-          "updated_at": "2024-12-15T05:06:40.000Z"
-        },
-        {
-          "id": "m4eh8jmj",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "Statement"
-            },
-            {
-              "id": "option_2",
-              "option": "PreparedStatement"
-            },
-            {
-              "id": "option_3",
-              "option": "CallableStatement"
-            },
-            {
-              "id": "option_4",
-              "option": "ResultSet"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which of the following is used for executing static SQL queries in JDBC?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "Statement",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "PreparedStatement",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "CallableStatement",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "ResultSet",
+          "option_4": "<p>&nbsp;given cut-off marks.</p>",
           "option_4_image": null,
           "option_4_partial": null,
           "option_5": null,
           "option_5_image": null,
           "option_5_partial": null,
-          "explanation": "Statement is used for executing static SQL queries that are fixed at runtime.",
+          "explanation": "<p>NA</p>",
           "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
+          "user_id": "1",
+          "user_role": "superadmin",
           "verified_by": null,
           "verify_role": null,
-          "verified": 0,
+          "verified": 1,
           "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-13T17:47:21.000Z"
         },
         {
-          "id": "m4p559my",
+          "id": "kyw2ceal",
           "type": "single_option",
           "positive_mark": 1,
           "negative_mark": 0,
           "options": [
             {
               "id": "option_1",
-              "option": "<p>Both statements execute, and changes are saved to the database.</p>"
+              "option": "<p>To live in great comfort and luxury</p>"
             },
             {
               "id": "option_2",
-              "option": "<p>Both statements execute, but changes are rolled back.</p>"
+              "option": "<p>To live a carefree live</p>"
             },
             {
               "id": "option_3",
-              "option": "<p>Only the first statement executes, and changes are saved.</p>"
+              "option": "<p>To be surrounded by a cares and worries</p>"
             },
             {
               "id": "option_4",
-              "option": "<p>Only the second statement executes, and changes are saved.</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above.</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What happens when the following code executes successfully?</p>\r\n<pre class=\"language-java\"><code>Connection con = DriverManager.getConnection(url, user, password);  \r\ncon.setAutoCommit(false);  \r\nStatement stmt = con.createStatement();  \r\nstmt.executeUpdate(\"UPDATE accounts SET balance = balance - 100 WHERE id = 1\");  \r\nstmt.executeUpdate(\"UPDATE accounts SET balance = balance + 100 WHERE id = 2\");  \r\ncon.commit();\r\n</code></pre>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p>Both statements execute, and changes are saved to the database.</p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p>Both statements execute, but changes are rolled back.</p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p>Only the first statement executes, and changes are saved.</p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p>Only the second statement executes, and changes are saved.</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above.</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>The code disables auto-commit mode with <code>con.setAutoCommit(false)</code>. Both statements are executed successfully, and calling <code>con.commit()</code> ensures the changes are committed to the database.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T05:03:57.000Z",
-          "updated_at": "2024-12-15T05:03:57.000Z"
-        },
-        {
-          "id": "m4p523nu",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p><code>rs.last()</code></p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p><code>rs.end()</code></p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p><code>rs.moveToLast()</code></p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p><code>rs.previous()</code></p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p><code>rs.close()</code></p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>Which method is used to move the cursor to the last row of a <code>ResultSet</code> object?</p>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p><code>rs.last()</code></p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p><code>rs.end()</code></p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p><code>rs.moveToLast()</code></p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p><code>rs.previous()</code></p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p><code>rs.close()</code></p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>The <code>ResultSet.last()</code> method moves the cursor to the last row of the result set if the result set type supports it (e.g., <code>ResultSet.TYPE_SCROLL_INSENSITIVE</code>).</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T05:01:29.000Z",
-          "updated_at": "2024-12-15T05:01:29.000Z"
-        },
-        {
-          "id": "m4p4z5tj",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p>Compilation error</p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p>Runtime error</p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p>Prints \"Employee Found\"</p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>Prints \"No Employee Found\"</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_4",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What is the output of the following code snippet if the <code>employees</code> table has no rows with <code>id = 10</code>?</p>\r\n<pre class=\"language-java\"><code>String sql = \"SELECT * FROM employees WHERE id = ?\";\r\nPreparedStatement pstmt = con.prepareStatement(sql);\r\npstmt.setInt(1, 10);\r\nResultSet rs = pstmt.executeQuery();\r\nif (rs.next()) {\r\n    System.out.println(\"Employee Found\");\r\n} else {\r\n    System.out.println(\"No Employee Found\");\r\n}\r\n</code></pre>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p>Compilation error</p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p>Runtime error</p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p>Prints \"Employee Found\"</p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p>Prints \"No Employee Found\"</p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>The <code>ResultSet</code> <code>rs.next()</code> method moves the cursor to the next row and returns <code>true</code> if a row exists. Since there are no rows with <code>id = 10</code>, it returns <code>false</code>, and the else block executes.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T04:59:12.000Z",
-          "updated_at": "2024-12-15T04:59:12.000Z"
-        },
-        {
-          "id": "m4eh8jm9",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "Load driver, establish connection, execute query, close connection"
-            },
-            {
-              "id": "option_2",
-              "option": "Establish connection, load driver, execute query, close connection"
-            },
-            {
-              "id": "option_3",
-              "option": "Execute query, load driver, establish connection, close connection"
-            },
-            {
-              "id": "option_4",
-              "option": "Execute query, load driver, establish connection, close connection"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_1",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which of the following is the correct order of steps in the JDBC process?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "Load driver, establish connection, execute query, close connection",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "Establish connection, load driver, execute query, close connection",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "Execute query, load driver, establish connection, close connection",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "Execute query, load driver, establish connection, close connection",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "The correct order in the JDBC process is:\nLoad the JDBC driver,\nEstablish a connection to the database,\nExecute the SQL query, and\nClose the connection.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4eh8jmn",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "execute()"
-            },
-            {
-              "id": "option_2",
-              "option": "executeQuery()"
-            },
-            {
-              "id": "option_3",
-              "option": "executeUpdate()"
-            },
-            {
-              "id": "option_4",
-              "option": "executeStatement()"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_2",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which method is used to execute a SELECT query using Statement?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "execute()",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "executeQuery()",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "executeUpdate()",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "executeStatement()",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "The executeQuery() method is used for executing SELECT queries and returns a ResultSet object.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4eh8jmk",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "It allows non-SQL commands to execute"
-            },
-            {
-              "id": "option_2",
-              "option": "It is used for calling stored procedures"
-            },
-            {
-              "id": "option_3",
-              "option": "It cannot execute SQL queries with parameters."
-            },
-            {
-              "id": "option_4",
-              "option": "It improves performance for repeated queries."
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_4",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "What is the primary advantage of PreparedStatement over Statement?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "It allows non-SQL commands to execute",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "It is used for calling stored procedures",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "It cannot execute SQL queries with parameters.",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "It improves performance for repeated queries.",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "PreparedStatement is precompiled, which makes it faster for executing the same query multiple times with different parameters.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4eh8jml",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "It is used for executing simple SELECT queries."
-            },
-            {
-              "id": "option_2",
-              "option": "It allows calling stored procedures in the database."
-            },
-            {
-              "id": "option_3",
-              "option": "It is less efficient than Statement"
-            },
-            {
-              "id": "option_4",
-              "option": "It does not support input parameters"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_2",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4egzzym",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "  ",
-          "question": "Which of the following is true about CallableStatement?",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "It is used for executing simple SELECT queries.",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "It allows calling stored procedures in the database.",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "It is less efficient than Statement",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "It does not support input parameters",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": null,
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "CallableStatement is designed to execute stored procedures, which can have both input and output parameters.",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-07T17:56:58.000Z",
-          "updated_at": "2024-12-07T17:56:58.000Z"
-        },
-        {
-          "id": "m4p5aqrd",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p><code>cs.getOutValue(1)</code></p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p><code>cs.getInt(1)</code></p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p><code>cs.registerOutParameter(1, Types.INTEGER); cs.getInt(1);</code></p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p><code>cs.getParameterValue(1)</code></p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
-            }
-          ],
-          "question_type": "text_questions",
-          "student_answer": "option_3",
-          "time_spent": 0,
-          "marked_for_review": "0",
-          "chapter_id": "m4p4vce9",
-          "paragraph_id": null,
-          "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What is the correct way to retrieve an <code>OUT</code> parameter value from a stored procedure using <code>CallableStatement</code>?</p>",
-          "question_image": null,
-          "num_options": 0,
-          "option_1": "<p><code>cs.getOutValue(1)</code></p>",
-          "option_1_image": null,
-          "option_1_partial": null,
-          "option_2": "<p><code>cs.getInt(1)</code></p>",
-          "option_2_image": null,
-          "option_2_partial": null,
-          "option_3": "<p><code>cs.registerOutParameter(1, Types.INTEGER); cs.getInt(1);</code></p>",
-          "option_3_image": null,
-          "option_3_partial": null,
-          "option_4": "<p><code>cs.getParameterValue(1)</code></p>",
-          "option_4_image": null,
-          "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
-          "option_5_image": null,
-          "option_5_partial": null,
-          "explanation": "<p>To retrieve an <code>OUT</code> parameter value, you must first register the parameter using <code>registerOutParameter()</code> with the parameter index and SQL type. Then use the appropriate <code>get</code> method to retrieve the value.</p>",
-          "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
-          "verified_by": null,
-          "verify_role": null,
-          "verified": 0,
-          "verified_difficulty": null,
-          "created_at": "2024-12-15T05:08:13.000Z",
-          "updated_at": "2024-12-15T05:08:13.000Z"
-        },
-        {
-          "id": "m4p57fd8",
-          "type": "single_option",
-          "positive_mark": 1,
-          "negative_mark": 0,
-          "options": [
-            {
-              "id": "option_1",
-              "option": "<p>Compilation error</p>"
-            },
-            {
-              "id": "option_2",
-              "option": "<p>Alice, Bob</p>"
-            },
-            {
-              "id": "option_3",
-              "option": "<p>Bob, Alice</p>"
-            },
-            {
-              "id": "option_4",
-              "option": "<p>No output</p>"
-            },
-            {
-              "id": "option_5",
-              "option": "<p>None of the above</p>"
+              "option": "<p>To live in great difficulty</p>"
             }
           ],
           "question_type": "text_questions",
           "student_answer": null,
           "time_spent": 0,
           "marked_for_review": null,
-          "chapter_id": "m4p4vce9",
+          "chapter_id": "kyw2ceak",
           "paragraph_id": null,
           "difficulty": "medium",
-          "reference": "null",
-          "question": "<p>What does the following code output if <code>ResultSet</code> has the following data:</p>\r\n<table style=\"border-collapse: collapse; border-color: #000000; border-style: solid;\" border=\"1\">\r\n<thead>\r\n<tr>\r\n<th style=\"border-color: #000000;\">id</th>\r\n<th style=\"border-color: #000000;\">name</th>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td style=\"border-color: #000000;\">1</td>\r\n<td style=\"border-color: #000000;\">Alice</td>\r\n</tr>\r\n<tr>\r\n<td style=\"border-color: #000000;\">2</td>\r\n<td style=\"border-color: #000000;\">Bob</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<pre class=\"language-java\"><code>rs.afterLast();  \r\nwhile (rs.previous()) {  \r\n    System.out.println(rs.getString(\"name\"));  \r\n}\r\n</code></pre>",
+          "reference": "Verbal_English_Idioms and Phrases_01",
+          "question": "<p>In the following question, out of the four alternatives,&nbsp;<strong>select the alternative which best expresses the meaning of the idiom/phrase.</strong></p>\r\n<p><strong><em>To live in a clover</em></strong></p>",
           "question_image": null,
           "num_options": 0,
-          "option_1": "<p>Compilation error</p>",
+          "option_1": "<p>To live in great comfort and luxury</p>",
           "option_1_image": null,
           "option_1_partial": null,
-          "option_2": "<p>Alice, Bob</p>",
+          "option_2": "<p>To live a carefree live</p>",
           "option_2_image": null,
           "option_2_partial": null,
-          "option_3": "<p>Bob, Alice</p>",
+          "option_3": "<p>To be surrounded by a cares and worries</p>",
           "option_3_image": null,
           "option_3_partial": null,
-          "option_4": "<p>No output</p>",
+          "option_4": "<p>To live in great difficulty</p>",
           "option_4_image": null,
           "option_4_partial": null,
-          "option_5": "<p>None of the above</p>",
+          "option_5": null,
           "option_5_image": null,
           "option_5_partial": null,
-          "explanation": "<p><code>ResultSet.afterLast()</code> moves the cursor after the last row. The <code>rs.previous()</code> method iterates backward through the rows. This outputs <code>Bob</code> followed by <code>Alice</code>.</p>",
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
           "explanation_image": null,
-          "user_id": "l3x8r46u",
-          "user_role": "institutions",
+          "user_id": "1",
+          "user_role": "superadmin",
           "verified_by": null,
           "verify_role": null,
-          "verified": 0,
+          "verified": 1,
           "verified_difficulty": null,
-          "created_at": "2024-12-15T05:05:38.000Z",
-          "updated_at": "2024-12-15T05:05:38.000Z"
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2023-01-02T12:17:24.000Z"
+        },
+        {
+          "id": "kyw2ceoj",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>To having</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>I have</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Having</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Have I</p>"
+            },
+            {
+              "id": "option_5",
+              "option": "<p>None of these</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ceoi",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "LP_Verbal_Fill_Blank_Spaces(Single)_Questions_01_TestPaper_01",
+          "question": "<p>I had to admit ______ completely forgotten our wedding anniversary.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>To having</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>I have</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Having</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Have I</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": "<p>None of these</p>",
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-13T18:19:55.000Z"
+        },
+        {
+          "id": "kyw2ceis",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Has tea bring brought by the servant?</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Was the tea being brought by the servant?</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Is tea being brought by the servant?</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Was tea bringing by the servant?</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ceir",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Ref-01",
+          "question": "<p>Was the servant bringing tea? change into passive voice</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Has tea bring brought by the servant?</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Was the tea being brought by the servant?</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Is tea being brought by the servant?</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Was tea bringing by the servant?</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2023-04-19T05:59:50.000Z"
+        },
+        {
+          "id": "kyw2cf48",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>of</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>over</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>at</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>from</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2cf47",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "LP_Verbal_Prepositions_01_TestPaper_01",
+          "question": "<p>Take this medicine and you will get rid -------- the bad cold</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>of</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>over</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>at</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>from</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-13T21:10:08.000Z"
+        },
+        {
+          "id": "kyw2cdyw",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Agrees</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Agreed</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Proceed</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Satisfied</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2cdyv",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Selecting Words_01",
+          "question": "<p>All the faculty members except HOD_______________to the new curriculum proposed by Prof. Bhasin.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Agrees</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Agreed</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Proceed</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Satisfied</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-10-16T09:13:02.000Z"
+        },
+        {
+          "id": "kyw2ce1w",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>RQSP</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>QRPS</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>SRPQ</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>PQRS</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce1v",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Jumbled Sentences_01",
+          "question": "<div>In the question each passage consists of six sentences. The first and the sixth sentences are given in the beginning. The remaining are jumbled up and assigned labels : P,Q,R &amp; S.</div>\r\n<div>S1: Once upon a time an ant lived on the bank of river.</div>\r\n<div>P: The dove saw the ant struggling in water in a helpless condition.</div>\r\n<div>Q: All its efforts to come up is failed.</div>\r\n<div>R: One day it suddenly slipped in to water.</div>\r\n<div>S: A dove lived in the tree on the bank not far from the spot.</div>\r\n<div>S6: She was touched.</div>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>RQSP</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>QRPS</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>SRPQ</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>PQRS</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-02T00:32:34.000Z"
+        },
+        {
+          "id": "kyw2ceft",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>have</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>has</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>is</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>are</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2cefs",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Ref_01",
+          "question": "<p>The teacher ____________ completed this chapter.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>have</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>has</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>is</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>are</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-13T17:27:21.000Z"
+        },
+        {
+          "id": "kyw2ce5x",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Voice: vibration</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Ribbon: Printer</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Trance: narcotic</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>shred: wood</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce5w",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Verbal Analogies_01",
+          "question": "<p>Battle : war ::</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Voice: vibration</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Ribbon: Printer</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Trance: narcotic</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>shred: wood</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-02T19:51:07.000Z"
+        },
+        {
+          "id": "kyw2ce69",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>A</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>B</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>C</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>No Error</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce68",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Spotting Errors_01",
+          "question": "<p><strong>Identify error in the following</strong></p>\r\n<p>(A)When the captain called the crew (B) Each of the crew members run together (C) to the deck of the ship</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>A</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>B</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>C</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>No Error</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-02T20:09:42.000Z"
+        },
+        {
+          "id": "kyw2cf87",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>simple past</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>simple present</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>present continous</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>past perfect</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2cf86",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "LP_Verbal_Tenses_01_TestPaper_01",
+          "question": "<p>What is the Tense of the below Sentence:  Suganya is typing.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>simple past</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>simple present</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>present continous</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>past perfect</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2025-02-21T09:45:03.000Z"
+        },
+        {
+          "id": "kyw2ce2q",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Observation</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>report</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>forecast</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>news</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce2p",
+          "paragraph_id": null,
+          "difficulty": "easy",
+          "reference": "Verbal_English_Sentence Improvement_01",
+          "question": "<p>Improve the sentence by selecting the correct alternative to the italicized part of the sentence:</p>\r\n<p>As per the weather <em>prediction,</em> it will rain heavily for the next one week.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Observation</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>report</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>forecast</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>news</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-02T02:07:50.000Z"
+        },
+        {
+          "id": "kyw2ce34",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>is an</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>are an</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>is the</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>a</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce33",
+          "paragraph_id": null,
+          "difficulty": "easy",
+          "reference": "Verbal_English_Sentence Completion_01",
+          "question": "<p>Select the correct option that fills the blanks to make the sentence meaningfully complete.</p>\r\n<p>The teacher announced in the exam hall, &lsquo;All you have............ hour&lsquo;.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>is an</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>are an</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>is the</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>a</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-02T04:58:48.000Z"
+        },
+        {
+          "id": "kyw2ce1k",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Younis has played twenty matches last year</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Younis have played twenty matches last year</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Younis have been played twenty matches last year</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Younis had been played twenty matches last year</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce1j",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Sentence Selection_01",
+          "question": "<p>Which of the following sentence is grammatically correct?</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Younis has played twenty matches last year</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Younis have played twenty matches last year</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Younis have been played twenty matches last year</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Younis had been played twenty matches last year</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-01T18:47:09.000Z"
+        },
+        {
+          "id": "kyw2cf7g",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>no article</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>a</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>an</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>the</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2cf7f",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "LP_Verbal_Articles_01_TestPaper_01",
+          "question": "<p>Let us play ----- chess</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>no article</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>a</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>an</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>the</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-14T01:13:43.000Z"
+        },
+        {
+          "id": "kyw2ce2k",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>BCDAE</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>DAEBC</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>CDBAE</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>CBDAE</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce2j",
+          "paragraph_id": null,
+          "difficulty": "easy",
+          "reference": "Verbal_English_Sentence Formation_01",
+          "question": "<div>Form the sentence with the given alternatives:</div>\r\n<div>A.to</div>\r\n<div>B.he talked</div>\r\n<div>C.after</div>\r\n<div>D.he learned</div>\r\n<div>E.study regularly</div>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>BCDAE</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>DAEBC</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>CDBAE</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>CBDAE</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-02T01:58:54.000Z"
+        },
+        {
+          "id": "kyw2ce7l",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Unforgivable</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Legitimate</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Free from dirt&nbsp;&nbsp;</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>None of these</p>"
+            }
+          ],
+          "question_type": "para_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce7j",
+          "paragraph_id": "kyw2ce7k",
+          "difficulty": "medium",
+          "reference": "Verbal_English_Reading Comprehension_01(A)",
+          "question": "<p>What does the word sanitised&lsquo; imply in the first paragraph of the passage?</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Unforgivable</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Legitimate</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Free from dirt&nbsp;&nbsp;</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>None of these</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-03T17:33:08.000Z",
+          "paragraph": "<p>Read the passage and answer the questions given below:</p>\r\n<p>Since the late 1970s when the technology for sex determination first came into being, sex selective abortion has unleashed a saga of horror. Experts are calling it \"sanitised barbarism\". Demographic trends indicate India is fast heading towards a million female foetuses aborted each year.Although foetal sex determination and sex selection is a criminal offence in India, the practice is rampant. Private clinics with ultrasound machines are doing brisk business. Everywhere, people are paying to know the sex of an unborn child. And paying more to abort the female child. The technology has even reached foetal medicine, says these days he hardly sees a family with two daughters. People are getting sex determination done even for the first child, he says.If the 1991 Census showed that two districts had a child sex ratio (number of girls per thousand boys) less than 850; by 2001 it was 51 districts.</p>\r\n<p>Child rights activist Dr. Sabu George says foeticide is the most extreme form of violence against women. \"Today a girl is several times more likely to be eliminated before birth than die of various causes in the first year. Nature intended the womb to be a safe space. Today, doctors have made it the most unsafe space for the female child,\" he says. He believes that doctors must be held responsible \"They have aggressively promoted the misuse of technology and legitimised foeticide.\"</p>\r\n<p>Researchers and scholars use hard-hitting analogy to emphasise the extent of the problem. Dr. Satish Agnihotri, senior IAS officer and scholar who has done extensive research on the issue, calls the technology \"a weapon of mass destruction\". Dr. Bedi refers to it as genocide: \"More than 6 million killed in 20 years. That's the number of Jews killed in the Holocaust.\"</p>\r\n<p>Akhila Sivadas, Centre for Advocacy and Research, Delhi, feels that the PCPNDT Act (Pre-Conception and Pre-Natal Diagnostic Techniques? Regulation and Prevention of Misuse) is very well conceived and easy to use. The need of the hour is the legal literacy to ensure the law is implemented. The demand and supply debate has been going on for some time. Doctors say there is a social demand and they are fulfilling it. They argue that social attitudes must change. However, in this case supply fuels demand.</p>\r\n<p>Technology will have to be regulated. Technology in the hands of greedy, vested interests cannot be neutral. There is a law to prevent misuse and we must be able to use it,&lsquo; she says.On the Demand&lsquo; side, experts such as Dr. Agnihotri argue that women&lsquo;s participation in workforce, having disposable incomes and making a contribution to the larger society will make a difference to how women are seen. Youth icons and role models such as Sania Mirza are making an impact, he says.Others feel there needs to be widespread visible contempt and anger in society against this Genocide&lsquo; the kind we saw against the Nithari killings,&lsquo; says Dr Bedi. Today nobody can say that female foeticide is not their problem.&lsquo; Time we all did our bit to help save the girl child. Time&lsquo;s running out.</p>",
+          "paragraph_image": null
+        },
+        {
+          "id": "kyw2ce7n",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>The girl child is as safe in the mother's womb as after birth</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>The girl child is safe in the mother's womb in comparison to after birth</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>The girl child is safer after birth as compared to mother's womb</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>None of these</p>"
+            }
+          ],
+          "question_type": "para_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce7j",
+          "paragraph_id": "kyw2ce7k",
+          "difficulty": "medium",
+          "reference": "Verbal_English_Reading Comprehension_01(C)",
+          "question": "<p>Which of the following will Dr. George agree to?</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>The girl child is as safe in the mother's womb as after birth</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>The girl child is safe in the mother's womb in comparison to after birth</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>The girl child is safer after birth as compared to mother's womb</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>None of these</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-03T17:40:50.000Z",
+          "paragraph": "<p>Read the passage and answer the questions given below:</p>\r\n<p>Since the late 1970s when the technology for sex determination first came into being, sex selective abortion has unleashed a saga of horror. Experts are calling it \"sanitised barbarism\". Demographic trends indicate India is fast heading towards a million female foetuses aborted each year.Although foetal sex determination and sex selection is a criminal offence in India, the practice is rampant. Private clinics with ultrasound machines are doing brisk business. Everywhere, people are paying to know the sex of an unborn child. And paying more to abort the female child. The technology has even reached foetal medicine, says these days he hardly sees a family with two daughters. People are getting sex determination done even for the first child, he says.If the 1991 Census showed that two districts had a child sex ratio (number of girls per thousand boys) less than 850; by 2001 it was 51 districts.</p>\r\n<p>Child rights activist Dr. Sabu George says foeticide is the most extreme form of violence against women. \"Today a girl is several times more likely to be eliminated before birth than die of various causes in the first year. Nature intended the womb to be a safe space. Today, doctors have made it the most unsafe space for the female child,\" he says. He believes that doctors must be held responsible \"They have aggressively promoted the misuse of technology and legitimised foeticide.\"</p>\r\n<p>Researchers and scholars use hard-hitting analogy to emphasise the extent of the problem. Dr. Satish Agnihotri, senior IAS officer and scholar who has done extensive research on the issue, calls the technology \"a weapon of mass destruction\". Dr. Bedi refers to it as genocide: \"More than 6 million killed in 20 years. That's the number of Jews killed in the Holocaust.\"</p>\r\n<p>Akhila Sivadas, Centre for Advocacy and Research, Delhi, feels that the PCPNDT Act (Pre-Conception and Pre-Natal Diagnostic Techniques? Regulation and Prevention of Misuse) is very well conceived and easy to use. The need of the hour is the legal literacy to ensure the law is implemented. The demand and supply debate has been going on for some time. Doctors say there is a social demand and they are fulfilling it. They argue that social attitudes must change. However, in this case supply fuels demand.</p>\r\n<p>Technology will have to be regulated. Technology in the hands of greedy, vested interests cannot be neutral. There is a law to prevent misuse and we must be able to use it,&lsquo; she says.On the Demand&lsquo; side, experts such as Dr. Agnihotri argue that women&lsquo;s participation in workforce, having disposable incomes and making a contribution to the larger society will make a difference to how women are seen. Youth icons and role models such as Sania Mirza are making an impact, he says.Others feel there needs to be widespread visible contempt and anger in society against this Genocide&lsquo; the kind we saw against the Nithari killings,&lsquo; says Dr Bedi. Today nobody can say that female foeticide is not their problem.&lsquo; Time we all did our bit to help save the girl child. Time&lsquo;s running out.</p>",
+          "paragraph_image": null
+        },
+        {
+          "id": "kyw2ce7o",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Demand for principled doctors</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Demand for high income jobs for women</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Demand for youth icons</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Demand for sex determination and abortion</p>"
+            }
+          ],
+          "question_type": "para_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce7j",
+          "paragraph_id": "kyw2ce7k",
+          "difficulty": "medium",
+          "reference": "Verbal_English_Reading Comprehension_01(D)",
+          "question": "<p>Which ―demand‖ the author refers to in paragraph?</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Demand for principled doctors</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Demand for high income jobs for women</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Demand for youth icons</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Demand for sex determination and abortion</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-03T18:53:58.000Z",
+          "paragraph": "<p>Read the passage and answer the questions given below:</p>\r\n<p>Since the late 1970s when the technology for sex determination first came into being, sex selective abortion has unleashed a saga of horror. Experts are calling it \"sanitised barbarism\". Demographic trends indicate India is fast heading towards a million female foetuses aborted each year.Although foetal sex determination and sex selection is a criminal offence in India, the practice is rampant. Private clinics with ultrasound machines are doing brisk business. Everywhere, people are paying to know the sex of an unborn child. And paying more to abort the female child. The technology has even reached foetal medicine, says these days he hardly sees a family with two daughters. People are getting sex determination done even for the first child, he says.If the 1991 Census showed that two districts had a child sex ratio (number of girls per thousand boys) less than 850; by 2001 it was 51 districts.</p>\r\n<p>Child rights activist Dr. Sabu George says foeticide is the most extreme form of violence against women. \"Today a girl is several times more likely to be eliminated before birth than die of various causes in the first year. Nature intended the womb to be a safe space. Today, doctors have made it the most unsafe space for the female child,\" he says. He believes that doctors must be held responsible \"They have aggressively promoted the misuse of technology and legitimised foeticide.\"</p>\r\n<p>Researchers and scholars use hard-hitting analogy to emphasise the extent of the problem. Dr. Satish Agnihotri, senior IAS officer and scholar who has done extensive research on the issue, calls the technology \"a weapon of mass destruction\". Dr. Bedi refers to it as genocide: \"More than 6 million killed in 20 years. That's the number of Jews killed in the Holocaust.\"</p>\r\n<p>Akhila Sivadas, Centre for Advocacy and Research, Delhi, feels that the PCPNDT Act (Pre-Conception and Pre-Natal Diagnostic Techniques? Regulation and Prevention of Misuse) is very well conceived and easy to use. The need of the hour is the legal literacy to ensure the law is implemented. The demand and supply debate has been going on for some time. Doctors say there is a social demand and they are fulfilling it. They argue that social attitudes must change. However, in this case supply fuels demand.</p>\r\n<p>Technology will have to be regulated. Technology in the hands of greedy, vested interests cannot be neutral. There is a law to prevent misuse and we must be able to use it,&lsquo; she says.On the Demand&lsquo; side, experts such as Dr. Agnihotri argue that women&lsquo;s participation in workforce, having disposable incomes and making a contribution to the larger society will make a difference to how women are seen. Youth icons and role models such as Sania Mirza are making an impact, he says.Others feel there needs to be widespread visible contempt and anger in society against this Genocide&lsquo; the kind we saw against the Nithari killings,&lsquo; says Dr Bedi. Today nobody can say that female foeticide is not their problem.&lsquo; Time we all did our bit to help save the girl child. Time&lsquo;s running out.</p>",
+          "paragraph_image": null
+        },
+        {
+          "id": "kyw2ce7q",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Effective use of law</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Mass public outrage</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Comparison with Nithari killing</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Contempt towards doctors</p>"
+            }
+          ],
+          "question_type": "para_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce7j",
+          "paragraph_id": "kyw2ce7k",
+          "difficulty": "medium",
+          "reference": "Verbal_English_Reading Comprehension_01(F)",
+          "question": "<p>What is the solution to the problem of female foeticide as envisioned by Dr. Bedi?</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Effective use of law</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Mass public outrage</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Comparison with Nithari killing</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Contempt towards doctors</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-03T18:48:20.000Z",
+          "paragraph": "<p>Read the passage and answer the questions given below:</p>\r\n<p>Since the late 1970s when the technology for sex determination first came into being, sex selective abortion has unleashed a saga of horror. Experts are calling it \"sanitised barbarism\". Demographic trends indicate India is fast heading towards a million female foetuses aborted each year.Although foetal sex determination and sex selection is a criminal offence in India, the practice is rampant. Private clinics with ultrasound machines are doing brisk business. Everywhere, people are paying to know the sex of an unborn child. And paying more to abort the female child. The technology has even reached foetal medicine, says these days he hardly sees a family with two daughters. People are getting sex determination done even for the first child, he says.If the 1991 Census showed that two districts had a child sex ratio (number of girls per thousand boys) less than 850; by 2001 it was 51 districts.</p>\r\n<p>Child rights activist Dr. Sabu George says foeticide is the most extreme form of violence against women. \"Today a girl is several times more likely to be eliminated before birth than die of various causes in the first year. Nature intended the womb to be a safe space. Today, doctors have made it the most unsafe space for the female child,\" he says. He believes that doctors must be held responsible \"They have aggressively promoted the misuse of technology and legitimised foeticide.\"</p>\r\n<p>Researchers and scholars use hard-hitting analogy to emphasise the extent of the problem. Dr. Satish Agnihotri, senior IAS officer and scholar who has done extensive research on the issue, calls the technology \"a weapon of mass destruction\". Dr. Bedi refers to it as genocide: \"More than 6 million killed in 20 years. That's the number of Jews killed in the Holocaust.\"</p>\r\n<p>Akhila Sivadas, Centre for Advocacy and Research, Delhi, feels that the PCPNDT Act (Pre-Conception and Pre-Natal Diagnostic Techniques? Regulation and Prevention of Misuse) is very well conceived and easy to use. The need of the hour is the legal literacy to ensure the law is implemented. The demand and supply debate has been going on for some time. Doctors say there is a social demand and they are fulfilling it. They argue that social attitudes must change. However, in this case supply fuels demand.</p>\r\n<p>Technology will have to be regulated. Technology in the hands of greedy, vested interests cannot be neutral. There is a law to prevent misuse and we must be able to use it,&lsquo; she says.On the Demand&lsquo; side, experts such as Dr. Agnihotri argue that women&lsquo;s participation in workforce, having disposable incomes and making a contribution to the larger society will make a difference to how women are seen. Youth icons and role models such as Sania Mirza are making an impact, he says.Others feel there needs to be widespread visible contempt and anger in society against this Genocide&lsquo; the kind we saw against the Nithari killings,&lsquo; says Dr Bedi. Today nobody can say that female foeticide is not their problem.&lsquo; Time we all did our bit to help save the girl child. Time&lsquo;s running out.</p>",
+          "paragraph_image": null
+        },
+        {
+          "id": "kyw2ce7p",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Stale&nbsp;&nbsp;&nbsp;</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Necessary</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Indifferent</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Nonchalant</p>"
+            }
+          ],
+          "question_type": "para_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ceaq",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Synonyms_02",
+          "question": "<p>Synonyms of MUSTY</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Stale&nbsp;&nbsp;&nbsp;</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Necessary</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Indifferent</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Nonchalant</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2025-03-03T12:57:40.000Z",
+          "updated_at": "2025-03-03T12:58:57.000Z",
+          "paragraph": null,
+          "paragraph_image": null
+        },
+        {
+          "id": "kyw2ce7m",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>They think it is legitimate</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>They do it because people demand it</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>The technology is available and there is no harm using it</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>None of these</p>"
+            }
+          ],
+          "question_type": "para_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce7j",
+          "paragraph_id": "kyw2ce7k",
+          "difficulty": "medium",
+          "reference": "Verbal_English_Reading Comprehension_01(B)",
+          "question": "<p>What is the Doctors explanation for foeticide?</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>They think it is legitimate</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>They do it because people demand it</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>The technology is available and there is no harm using it</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>None of these</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-03T17:34:21.000Z",
+          "paragraph": "<p>Read the passage and answer the questions given below:</p>\r\n<p>Since the late 1970s when the technology for sex determination first came into being, sex selective abortion has unleashed a saga of horror. Experts are calling it \"sanitised barbarism\". Demographic trends indicate India is fast heading towards a million female foetuses aborted each year.Although foetal sex determination and sex selection is a criminal offence in India, the practice is rampant. Private clinics with ultrasound machines are doing brisk business. Everywhere, people are paying to know the sex of an unborn child. And paying more to abort the female child. The technology has even reached foetal medicine, says these days he hardly sees a family with two daughters. People are getting sex determination done even for the first child, he says.If the 1991 Census showed that two districts had a child sex ratio (number of girls per thousand boys) less than 850; by 2001 it was 51 districts.</p>\r\n<p>Child rights activist Dr. Sabu George says foeticide is the most extreme form of violence against women. \"Today a girl is several times more likely to be eliminated before birth than die of various causes in the first year. Nature intended the womb to be a safe space. Today, doctors have made it the most unsafe space for the female child,\" he says. He believes that doctors must be held responsible \"They have aggressively promoted the misuse of technology and legitimised foeticide.\"</p>\r\n<p>Researchers and scholars use hard-hitting analogy to emphasise the extent of the problem. Dr. Satish Agnihotri, senior IAS officer and scholar who has done extensive research on the issue, calls the technology \"a weapon of mass destruction\". Dr. Bedi refers to it as genocide: \"More than 6 million killed in 20 years. That's the number of Jews killed in the Holocaust.\"</p>\r\n<p>Akhila Sivadas, Centre for Advocacy and Research, Delhi, feels that the PCPNDT Act (Pre-Conception and Pre-Natal Diagnostic Techniques? Regulation and Prevention of Misuse) is very well conceived and easy to use. The need of the hour is the legal literacy to ensure the law is implemented. The demand and supply debate has been going on for some time. Doctors say there is a social demand and they are fulfilling it. They argue that social attitudes must change. However, in this case supply fuels demand.</p>\r\n<p>Technology will have to be regulated. Technology in the hands of greedy, vested interests cannot be neutral. There is a law to prevent misuse and we must be able to use it,&lsquo; she says.On the Demand&lsquo; side, experts such as Dr. Agnihotri argue that women&lsquo;s participation in workforce, having disposable incomes and making a contribution to the larger society will make a difference to how women are seen. Youth icons and role models such as Sania Mirza are making an impact, he says.Others feel there needs to be widespread visible contempt and anger in society against this Genocide&lsquo; the kind we saw against the Nithari killings,&lsquo; says Dr Bedi. Today nobody can say that female foeticide is not their problem.&lsquo; Time we all did our bit to help save the girl child. Time&lsquo;s running out.</p>",
+          "paragraph_image": null
+        },
+        {
+          "id": "kyw2cedk",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Extinguish</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Wet</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Soak</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Drench</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2cedj",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Antonyms_01",
+          "question": "<p>ANTONYMS OF IGNITE</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Extinguish</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Wet</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Soak</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Drench</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-13T16:36:57.000Z"
+        },
+        {
+          "id": "kyw2cear",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Opening</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Stodgy</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>End</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>Past tense of Go</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ceaq",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Synonyms_01",
+          "question": "<p>Synonyms of VENT</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Opening</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Stodgy</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>End</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>Past tense of Go</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>We can't disclose the explanation ,Please check with the Trainer or Subject Faculty.</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2022-12-12T20:24:07.000Z"
+        },
+        {
+          "id": "kyw2ce0p",
+          "type": "single_option",
+          "positive_mark": 1,
+          "negative_mark": 0,
+          "options": [
+            {
+              "id": "option_1",
+              "option": "<p>Attribute his bad mood to tiredness</p>"
+            },
+            {
+              "id": "option_2",
+              "option": "<p>Contribute his bad mood to tiredness</p>"
+            },
+            {
+              "id": "option_3",
+              "option": "<p>Attribute his bad mood with tiredness</p>"
+            },
+            {
+              "id": "option_4",
+              "option": "<p>None of these</p>"
+            }
+          ],
+          "question_type": "text_questions",
+          "student_answer": null,
+          "time_spent": 0,
+          "marked_for_review": null,
+          "chapter_id": "kyw2ce0o",
+          "paragraph_id": null,
+          "difficulty": "medium",
+          "reference": "Verbal_English_Sentence Correction_01",
+          "question": "<p><em><strong>Correct the following Sentence:</strong></em></p>\r\n<p>Its best to <strong><em>attribute his bad mood</em> <em>on tiredness</em></strong> and just forgot it.</p>",
+          "question_image": null,
+          "num_options": 0,
+          "option_1": "<p>Attribute his bad mood to tiredness</p>",
+          "option_1_image": null,
+          "option_1_partial": null,
+          "option_2": "<p>Contribute his bad mood to tiredness</p>",
+          "option_2_image": null,
+          "option_2_partial": null,
+          "option_3": "<p>Attribute his bad mood with tiredness</p>",
+          "option_3_image": null,
+          "option_3_partial": null,
+          "option_4": "<p>None of these</p>",
+          "option_4_image": null,
+          "option_4_partial": null,
+          "option_5": null,
+          "option_5_image": null,
+          "option_5_partial": null,
+          "explanation": "<p>NA</p>",
+          "explanation_image": null,
+          "user_id": "1",
+          "user_role": "superadmin",
+          "verified_by": null,
+          "verify_role": null,
+          "verified": 1,
+          "verified_difficulty": null,
+          "created_at": "2022-01-26T21:32:20.000Z",
+          "updated_at": "2023-04-15T07:37:08.000Z"
         }
       ]
     }
   ],
   "student_exam": {
-    "attempt_id": "c335e4e6-7e33-4b71-b513-4400ab5cf685",
-    "exam_id": "m4zd4a57",
-    "exam_name": "22-Dec-2024_Test-02",
+    "attempt_id": "cd8f3dba-93b6-47fb-be5d-5272f703a9a4",
+    "exam_id": "lilje3iu",
+    "exam_name": "Mock Test-01",
     "status": "in_progress",
     "current_model": null,
     "current_question": null,

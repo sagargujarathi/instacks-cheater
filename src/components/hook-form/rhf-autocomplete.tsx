@@ -1,165 +1,102 @@
-import Autocomplete, { AutocompleteProps } from "@mui/material/Autocomplete";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
 import { useRef } from "react";
-import {
-  Controller,
-  ControllerFieldState,
-  ControllerRenderProps,
-  FieldError,
-  FieldValues,
-  useFormContext,
-} from "react-hook-form";
-
+import { Controller, useFormContext } from "react-hook-form";
 import ErrorComponent from "./error-component";
 
-export interface RHFAutocompleteProps<
-  T,
-  Multiple extends boolean | undefined,
-  DisableClearable extends boolean | undefined,
-  FreeSolo extends boolean | undefined
-> extends AutocompleteProps<T, Multiple, DisableClearable, FreeSolo> {
+export interface RHFAutocompleteProps {
   name: string;
   label?: string;
   placeholder?: string;
   helperText?: React.ReactNode;
-  options: ReadonlyArray<T>;
-  TextFieldProps?: TextFieldProps;
+  options: Array<{ label: string; value: string } | string>;
   shouldDirty?: boolean;
-
-  // Helper callback functions to get & set the underlying form control value
-  useGetSetMethods?: boolean;
-  getSelectedValue?: (fieldValue: string) => any;
-  setSelectedValue?: (option: any) => any;
+  size?: "small" | "medium";
+  className?: string;
 }
 
-interface AutoCompleteError extends FieldError {
-  value?: {
-    message: string;
-  };
-  label?: {
-    message: string;
-  };
-}
-
-export function RHFAutocomplete<
-  T,
-  Multiple extends boolean | undefined,
-  DisableClearable extends boolean | undefined,
-  FreeSolo extends boolean | undefined
->({
+export function RHFAutocomplete({
   name,
   label,
   placeholder,
   helperText,
   options,
-  TextFieldProps,
-  useGetSetMethods = false,
   shouldDirty = false,
-  setSelectedValue = (newValue) => {
-    if (useGetSetMethods) {
-      // Autocomplete multiple prop present?
-      if (Array.isArray(newValue)) {
-        return newValue.map((option) => {
-          return typeof option === "string" ? option : option.value;
-        });
-      }
-
-      if (newValue === null) {
-        return "";
-      }
-
-      return newValue?.value;
-    }
-
-    return newValue;
-  },
-  getSelectedValue = (fieldValue) => {
-    if (useGetSetMethods) {
-      // Autocomplete multiple prop present?
-      if (Array.isArray(fieldValue)) {
-        return options.filter((option: any) => {
-          return fieldValue.includes(
-            typeof option === "string" ? option : option.value
-          );
-        });
-      }
-
-      return options.find((option: any) => {
-        return (
-          fieldValue === (typeof option === "string" ? option : option.value)
-        );
-      });
-    }
-
-    return fieldValue;
-  },
-
+  size = "medium",
+  className,
   ...other
-}: Readonly<
-  Omit<
-    RHFAutocompleteProps<T, Multiple, DisableClearable, FreeSolo>,
-    "renderInput"
-  >
->) {
+}: RHFAutocompleteProps) {
   const { control, setValue } = useFormContext();
-  const fieldRef = useRef<HTMLInputElement>(null);
+  const fieldRef = useRef<HTMLSelectElement>(null);
+
+  // Convert string array to object array if needed
+  const normalizedOptions = options.map((option) =>
+    typeof option === "string" ? { label: option, value: option } : option
+  );
 
   return (
     <Controller
       name={name}
       control={control}
-      render={({
-        field,
-        fieldState,
-      }: {
-        field: ControllerRenderProps<FieldValues, string>;
-        fieldState: ControllerFieldState;
-      }) => {
-        const error = fieldState?.error as AutoCompleteError | undefined;
-
-        return (
-          <Autocomplete
-            {...field}
-            value={getSelectedValue(field.value) || null}
-            options={options}
-            onChange={(_, newValue) =>
-              setValue(name, setSelectedValue(newValue), {
-                shouldValidate: true,
-                shouldDirty: shouldDirty,
-              })
-            }
-            isOptionEqualToValue={(option) =>
-              typeof option === "string"
-                ? option === field?.value
-                : (option as { label: string })?.label === field?.value?.label
-            }
-            renderInput={(params) => (
-              <TextField
-                label={label}
-                placeholder={placeholder}
-                error={!!error}
-                helperText={
-                  error ? (
-                    <ErrorComponent
-                      message={
-                        error?.message ??
-                        error?.label?.message ??
-                        error?.value?.message
-                      }
-                    />
-                  ) : (
-                    helperText
-                  )
-                }
-                inputRef={fieldRef}
-                {...TextFieldProps}
-                {...params}
-              />
-            )}
-            {...other}
-          />
-        );
-      }}
+      render={({ field, fieldState: { error } }) => (
+        <div className={`form-control ${className || ""}`}>
+          {label && (
+            <label htmlFor={name} className="form-label">
+              {label}
+            </label>
+          )}
+          <div className="relative">
+            <select
+              {...field}
+              id={name}
+              ref={fieldRef}
+              className={`select-field ${size === "small" ? "py-1.5 text-sm" : "py-2"} ${
+                error ? "border-red-500" : ""
+              }`}
+              onChange={(e) => {
+                setValue(name, e.target.value, {
+                  shouldValidate: true,
+                  shouldDirty,
+                });
+              }}
+              {...other}
+            >
+              {placeholder && (
+                <option value="" disabled>
+                  {placeholder}
+                </option>
+              )}
+              {normalizedOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+              <svg
+                className="w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+          {(!!error || helperText) && (
+            <div className="mt-1">
+              {error ? (
+                <ErrorComponent message={error?.message} />
+              ) : (
+                <div className="text-xs text-gray-500">{helperText}</div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     />
   );
 }

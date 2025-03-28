@@ -13,6 +13,7 @@ export interface FormProviderProps<TFieldValues extends FieldValues> {
   onSubmit?: VoidFunction;
   style?: CSSProperties;
   formId?: string;
+  className?: string;
 }
 
 export default function FormProvider<TFieldValues extends FieldValues>({
@@ -21,10 +22,17 @@ export default function FormProvider<TFieldValues extends FieldValues>({
   methods,
   formId,
   style,
+  className,
 }: FormProviderProps<TFieldValues>) {
   return (
     <Form {...methods}>
-      <form onSubmit={onSubmit} noValidate id={formId} style={style}>
+      <form
+        onSubmit={onSubmit}
+        noValidate
+        id={formId}
+        style={style}
+        className={className}
+      >
         {children}
       </form>
     </Form>
