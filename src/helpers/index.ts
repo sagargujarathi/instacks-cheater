@@ -1,6 +1,9 @@
 import axios from "axios";
 import { getGeminiApi, initializeGeminiApi } from "@/services/gemini-api";
 
+// Create a cache for storing generated answers
+const answerCache = new Map<string, string>();
+
 interface UrlData {
   BASE_URL: string;
   ATTEMPT_ID: string;
@@ -117,6 +120,15 @@ export const getExamDetails = async (baseUrl: string, attemptId: string) => {
 
 export const generateAnswer = async (question: any) => {
   try {
+    // Generate a cache key based on the question ID or content
+    const cacheKey = question.id || JSON.stringify(question.question);
+
+    // Check if answer is already cached
+    if (answerCache.has(cacheKey)) {
+      console.log("Using cached answer for question:", cacheKey);
+      return answerCache.get(cacheKey);
+    }
+
     // Initialize or get the Gemini API instance
     let geminiApi;
     try {
@@ -127,6 +139,13 @@ export const generateAnswer = async (question: any) => {
 
     // Generate the answer using Gemini API
     const answer = await geminiApi.generateAnswer(question);
+
+    // Store the answer in cache for future use
+    if (answer) {
+      answerCache.set(cacheKey, answer);
+      console.log("Answer cached for future use:", cacheKey);
+    }
+
     return answer;
   } catch (error) {
     console.error("Error generating answer:", error);
