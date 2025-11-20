@@ -39,4 +39,14 @@
       "resourceTypes": ["xmlhttprequest"]
     }
   }
+  ,
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "https://proctorview.com/api/v1/client-logs",
+      "resourceTypes": ["xmlhttprequest"]
+    }
+  }
 ]

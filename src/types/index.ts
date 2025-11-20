@@ -3,6 +3,8 @@ import { KEY_TYPES } from "@/constants";
 export interface IStorageType {
   [KEY_TYPES.GENERATE_KEY]: string;
   [KEY_TYPES.AUTO_SELECT_KEY]: string;
+  [KEY_TYPES.SECRET_KEY]: string;
+  [KEY_TYPES.AI_PROVIDER]: string;
 }
 
 interface IExamDetailsType {

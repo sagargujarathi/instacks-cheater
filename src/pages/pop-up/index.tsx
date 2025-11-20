@@ -5,8 +5,14 @@ import schema, { FormType } from "@/pages/pop-up/schema";
 import {
   AUTO_SELECT_KEY_OPTIONS,
   GENERATE_KEY_OPTIONS,
+  AI_PROVIDER_OPTIONS,
   KEY_TYPES,
+  DEFAULT_GEMINI_KEY,
 } from "@/constants";
+import {
+  validateProviderKey,
+  ProviderValidationResult,
+} from "@/services/ai-service";
 import FormProvider from "@/components/hook-form/form-provider";
 import { RHFAutocomplete } from "@/components/hook-form/rhf-autocomplete";
 import { RHFCheckbox } from "@/components/hook-form/rhf-checkbox";
@@ -23,12 +29,19 @@ function Popup() {
   const [status, setStatus] = useState(STATUS_TYPE.NOT_VERIFIED);
   const [isTACPage, setIsTACPage] = useState(false);
   const [showApiKey, setShowApiKey] = useState(false);
+  const [isValidating, setIsValidating] = useState(false);
+  const [validationMessage, setValidationMessage] = useState("");
+  const [providerDetails, setProviderDetails] = useState<Record<
+    string,
+    any
+  > | null>(null);
 
-  const methods = useForm({
+  const methods = useForm<FormType>({
     defaultValues: {
       generateKey: "E",
       autoSelectKey: "D",
-      secretKey: "AIzaSyBEk3Igyw-mcaJ8GdW5oEdQZqeGotNckGA", // Default Gemini API key
+      provider: "GEMINI",
+      secretKey: DEFAULT_GEMINI_KEY,
       termsAndConditions: false,
     },
     resolver: zodResolver(schema),
@@ -36,16 +49,49 @@ function Popup() {
     mode: "all",
   });
 
-  const onSubmit = (form: FormType) => {
+  const onSubmit = async (form: FormType) => {
+    setIsValidating(true);
+    setValidationMessage("");
+    setStatus(STATUS_TYPE.NOT_VERIFIED);
+
     chrome.storage.local.set(
       {
         [KEY_TYPES.GENERATE_KEY]: form.generateKey,
         [KEY_TYPES.AUTO_SELECT_KEY]: form.autoSelectKey,
-        [KEY_TYPES.SECRET_KEY]: form.secretKey,
+        [KEY_TYPES.SECRET_KEY]: form.secretKey || DEFAULT_GEMINI_KEY,
+        [KEY_TYPES.AI_PROVIDER]: form.provider,
       },
-      () => console.log("CONFIGURATION SET SUCCESSFULLY")
+      async () => {
+        try {
+          const keyToTest = form.secretKey || DEFAULT_GEMINI_KEY;
+          const result: ProviderValidationResult = await validateProviderKey(
+            form.provider as any,
+            keyToTest
+          );
+          if (result.valid) {
+            setStatus(STATUS_TYPE.PASSED);
+            setProviderDetails(result.details || null);
+            setValidationMessage(
+              form.provider === "GEMINI"
+                ? `Validated: ${result.details?.displayName || result.details?.model || "Gemini model"} | Input tokens: ${result.details?.inputTokenLimit ?? "-"} | Output tokens: ${result.details?.outputTokenLimit ?? "-"}`
+                : "API key validated successfully."
+            );
+          } else {
+            setStatus(STATUS_TYPE.FAILED);
+            setProviderDetails(null);
+            setValidationMessage(
+              result.error || "API key invalid or not authorized."
+            );
+          }
+        } catch (e) {
+          setStatus(STATUS_TYPE.FAILED);
+          setValidationMessage("Validation failed. Please retry.");
+          setProviderDetails(null);
+        } finally {
+          setIsValidating(false);
+        }
+      }
     );
-    setStatus(STATUS_TYPE.PASSED);
   };
 
   return (
@@ -78,10 +124,20 @@ function Popup() {
                 helperText="Press this key to auto-select correct answers"
               />
 
+              <RHFAutocomplete
+                size="medium"
+                name="provider"
+                label="AI Provider"
+                options={AI_PROVIDER_OPTIONS}
+                helperText="Choose which AI model to use"
+              />
+
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <label className="block text-sm font-medium text-gray-700">
-                    Gemini API Key
+                    {methods.watch("provider") === "OPENAI"
+                      ? "OpenAI API Key"
+                      : "Gemini API Key"}
                   </label>
                   <button
                     type="button"
@@ -95,21 +151,56 @@ function Popup() {
                 <RHFTextField
                   name="secretKey"
                   type={showApiKey ? "text" : "password"}
-                  placeholder="Using default API key"
-                  helperText="Default key is already provided"
+                  placeholder={
+                    methods.watch("provider") === "GEMINI"
+                      ? "Using default Gemini key"
+                      : "Enter provider key"
+                  }
+                  helperText={
+                    methods.watch("provider") === "GEMINI"
+                      ? "Default key is already provided"
+                      : "Required for OpenAI"
+                  }
                 />
               </div>
 
-              {status !== STATUS_TYPE.NOT_VERIFIED && (
+              {(status !== STATUS_TYPE.NOT_VERIFIED || isValidating) && (
                 <div
                   className={
-                    status === STATUS_TYPE.PASSED
-                      ? "status-success"
-                      : "status-error"
+                    isValidating
+                      ? "status-info"
+                      : status === STATUS_TYPE.PASSED
+                        ? "status-success"
+                        : "status-error"
                   }
                 >
                   <div className="flex items-center gap-2">
-                    {status === STATUS_TYPE.PASSED ? (
+                    {isValidating ? (
+                      <>
+                        <svg
+                          className="w-5 h-5 animate-spin"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="4"
+                            d="M4 12a8 8 0 018-8"
+                          ></path>
+                        </svg>
+                        <span>Validating API key...</span>
+                      </>
+                    ) : status === STATUS_TYPE.PASSED ? (
                       <>
                         <svg
                           className="w-5 h-5"
@@ -122,7 +213,7 @@ function Popup() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span>All set to go! Please reload the page</span>
+                        <span>{validationMessage || "All set to go!"}</span>
                       </>
                     ) : (
                       <>
@@ -137,10 +228,58 @@ function Popup() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span>Invalid configuration</span>
+                        <span>
+                          {validationMessage || "Invalid configuration"}
+                        </span>
                       </>
                     )}
                   </div>
+                  {status === STATUS_TYPE.PASSED && providerDetails && (
+                    <div className="mt-2 text-xs text-gray-600 space-y-1">
+                      {methods.watch("provider") === "GEMINI" && (
+                        <>
+                          {providerDetails.displayName && (
+                            <div>
+                              <span className="font-semibold">Model:</span>{" "}
+                              {providerDetails.displayName} (
+                              {providerDetails.version})
+                            </div>
+                          )}
+                          {providerDetails.inputTokenLimit && (
+                            <div>
+                              <span className="font-semibold">
+                                Input Limit:
+                              </span>{" "}
+                              {providerDetails.inputTokenLimit.toLocaleString()}
+                            </div>
+                          )}
+                          {providerDetails.outputTokenLimit && (
+                            <div>
+                              <span className="font-semibold">
+                                Output Limit:
+                              </span>{" "}
+                              {providerDetails.outputTokenLimit.toLocaleString()}
+                            </div>
+                          )}
+                          {providerDetails.supportedGenerationMethods && (
+                            <div>
+                              <span className="font-semibold">Methods:</span>{" "}
+                              {providerDetails.supportedGenerationMethods.join(
+                                ", "
+                              )}
+                            </div>
+                          )}
+                        </>
+                      )}
+                      {methods.watch("provider") === "OPENAI" &&
+                        providerDetails.id && (
+                          <div>
+                            <span className="font-semibold">Model:</span>{" "}
+                            {providerDetails.id}
+                          </div>
+                        )}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -163,17 +302,17 @@ function Popup() {
               <button
                 type="submit"
                 className={`btn-primary w-full mt-2 ${
-                  !methods.formState.isValid || status === STATUS_TYPE.PASSED
+                  !methods.formState.isValid || isValidating
                     ? "opacity-50 cursor-not-allowed"
                     : ""
                 }`}
-                disabled={
-                  !methods.formState.isValid || status === STATUS_TYPE.PASSED
-                }
+                disabled={!methods.formState.isValid || isValidating}
               >
-                {status === STATUS_TYPE.PASSED
-                  ? "Configured"
-                  : "Save Configuration"}
+                {isValidating
+                  ? "Validating..."
+                  : status === STATUS_TYPE.PASSED
+                    ? "Configured"
+                    : "Save Configuration"}
               </button>
             </div>
           </div>

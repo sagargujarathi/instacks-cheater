@@ -1,5 +1,8 @@
 import axios from "axios";
+import extractOption from "@/services/answer-utils";
 import { KEY_TYPES } from "@/constants";
+import type { Question } from "@/types";
+import { IAIProvider } from "@/services/ai-types";
 
 interface GeminiPromptOptions {
   temperature?: number;
@@ -9,8 +12,14 @@ interface GeminiPromptOptions {
 }
 
 // Gemini API configuration
-const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta";
-const GEMINI_MODEL = "models/gemini-2.0-flash"; // This model supports multimodal inputs
+export const GEMINI_BASE_URL =
+  "https://generativelanguage.googleapis.com/v1beta";
+export const GEMINI_PRIMARY_MODELS = [
+  "models/gemini-1.5-pro",
+  "models/gemini-2.0-flash",
+  "models/gemini-1.5-flash",
+  "models/gemini-1.5-flash-latest",
+];
 
 // HTML tag stripping function
 const stripHtml = (html: string): string => {
@@ -44,11 +53,19 @@ async function imageUrlToBase64(url: string): Promise<string | null> {
   }
 }
 
-class GeminiService {
+class GeminiService implements IAIProvider {
   private apiKey: string;
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
+  }
+
+  public updateApiKey(key: string) {
+    this.apiKey = key;
+  }
+
+  public getApiKey() {
+    return this.apiKey;
   }
 
   /**
@@ -60,6 +77,18 @@ class GeminiService {
     options: GeminiPromptOptions = {}
   ) {
     try {
+      // Refresh API key from storage if changed
+      try {
+        const stored = await chrome.storage.local.get([KEY_TYPES.SECRET_KEY]);
+        const storedKey = stored[KEY_TYPES.SECRET_KEY];
+        if (storedKey && storedKey !== this.apiKey) {
+          console.log("GeminiService: updating API key from storage");
+          this.apiKey = storedKey;
+        }
+      } catch (e) {
+        console.warn("GeminiService: could not refresh API key", e);
+      }
+
       console.log("Preparing multimodal request with", images.length, "images");
 
       // Prepare parts array with text and images
@@ -85,30 +114,74 @@ class GeminiService {
 
       console.log("Sending multimodal request to Gemini API");
 
-      const response = await axios.post(
-        `${GEMINI_BASE_URL}/${GEMINI_MODEL}:generateContent?key=${this.apiKey}`,
-        {
-          contents: [{ parts }],
-          generationConfig: {
-            temperature: options.temperature || 0.7,
-            topK: options.topK || 40,
-            topP: options.topP || 0.95,
-            maxOutputTokens: options.maxOutputTokens || 1024,
+      const payload = {
+        contents: [
+          {
+            role: "user",
+            parts,
           },
-        }
+        ],
+        generationConfig: {
+          temperature: options.temperature ?? 0.7,
+          topK: options.topK ?? 40,
+          topP: options.topP ?? 0.95,
+          maxOutputTokens: options.maxOutputTokens ?? 1024,
+        },
+      };
+
+      console.log(
+        "GeminiService: using API key prefix:",
+        this.apiKey ? this.apiKey.slice(0, 8) + "***" : "<none>"
       );
 
-      if (response.status === 200 && response.data?.candidates?.length > 0) {
-        const result =
-          response.data.candidates[0]?.content?.parts[0]?.text || "";
-        console.log("Gemini API response received successfully");
-        return result;
-      } else {
-        console.error("Error generating response:", response.statusText);
-        return "Error generating answer";
+      let lastError: any = null;
+      for (const model of GEMINI_PRIMARY_MODELS) {
+        try {
+          const response = await axios.post(
+            `${GEMINI_BASE_URL}/${model}:generateContent?key=${this.apiKey}`,
+            payload
+          );
+          if (
+            response.status === 200 &&
+            response.data?.candidates?.length > 0
+          ) {
+            const result =
+              response.data.candidates[0]?.content?.parts[0]?.text || "";
+            console.log("Gemini model succeeded:", model);
+            return result;
+          }
+          console.warn("Model returned no candidates:", model);
+        } catch (err: any) {
+          lastError = err;
+          const status = err.response?.status;
+          const data = err.response?.data;
+          console.warn(
+            "Model failed",
+            model,
+            status,
+            data?.error?.message || data
+          );
+          // If 401 or 403 stop early (auth issue won't fix by switching models)
+          if (status === 401 || status === 403) {
+            return `Auth error (${status}) - check API key / quota`;
+          }
+          // If invalid model, continue loop
+          continue;
+        }
       }
+      return (
+        lastError?.response?.data?.error?.message || "Error generating answer"
+      );
     } catch (error) {
-      console.error("Gemini API error:", error);
+      if (error.response) {
+        console.error("Gemini API error status", error.response.status);
+        console.error("Gemini API error body", error.response.data);
+        return (
+          error.response.data?.error?.message || "Failed to generate answer"
+        );
+      } else {
+        console.error("Gemini API network/unknown error", error);
+      }
       return "Failed to generate answer";
     }
   }
@@ -116,7 +189,7 @@ class GeminiService {
   /**
    * Generate answer for a specific question, processing images if present
    */
-  async generateAnswer(question: any) {
+  async generateAnswer(question: Question) {
     // Prepare question text and options
     let questionText = question.question || "";
     // Strip HTML tags if present
@@ -148,57 +221,41 @@ class GeminiService {
       }
     }
 
-    // Make prompt even more concise to save tokens
-    const prompt = `${questionText}
+    // Create a detailed prompt that encourages reasoning
+    const prompt = `You are an expert test-taker answering a multiple-choice question. Your goal is to select the single CORRECT answer.
 
+Question:
+${questionText}
+
+Options:
 ${options.join("\n")}
 
-Answer with letter only (A-E).`;
+Think through this step-by-step:
+1. Read and understand what the question is asking
+2. Eliminate obviously wrong answers
+3. Compare remaining options carefully
+4. Select the most accurate answer
+
+Respond with ONLY the letter (A, B, C, D, or E). No explanation needed.
+
+Correct answer:`;
 
     console.log("Prompt for Gemini API:", prompt);
 
-    // Use multimodal generation only if images exist
+    // Use multimodal generation with zero temperature for maximum accuracy
     const answer =
       images.length > 0
         ? await this.generateMultimodalResponse(prompt, images, {
-            temperature: 0.3,
-            maxOutputTokens: 100,
+            temperature: 0,
+            maxOutputTokens: 200,
           })
         : await this.generateMultimodalResponse(prompt, [], {
-            temperature: 0.3,
-            maxOutputTokens: 100,
+            temperature: 0,
+            maxOutputTokens: 200,
           });
 
     console.log("Raw answer from Gemini:", answer);
-
-    // Extract option letter using the same logic
-    let optionLetter;
-
-    // Try different patterns to extract the answer
-    const patterns = [
-      /^([A-E])/i, // Just the letter at the beginning
-      /The answer is ([A-E])/i, // "The answer is X" format
-      /\b([A-E])[.\s)]/i, // Letter followed by period, space or parenthesis
-      /[^a-zA-Z]([A-E])[^a-zA-Z]/i, // Letter surrounded by non-alphabetic chars
-      /[A-E]/i, // Any letter A-E anywhere
-    ];
-
-    for (const pattern of patterns) {
-      const match = answer.match(pattern);
-      if (match) {
-        optionLetter = match[1] || match[0];
-        break;
-      }
-    }
-
-    console.log("Extracted option letter:", optionLetter);
-
-    if (optionLetter) {
-      const optionIndex = optionLetter.toUpperCase().charCodeAt(0) - 64;
-      return `option_${optionIndex}`;
-    }
-
-    return "";
+    return extractOption(answer);
   }
 }
 
@@ -225,3 +282,47 @@ export const getGeminiApi = (): GeminiService => {
 };
 
 export default GeminiService;
+
+// Lightweight key validation: attempt to fetch model metadata
+export interface GeminiValidationResult {
+  valid: boolean;
+  model?: string;
+  version?: string;
+  displayName?: string;
+  description?: string;
+  inputTokenLimit?: number;
+  outputTokenLimit?: number;
+  supportedGenerationMethods?: string[];
+  temperature?: number;
+  topP?: number;
+  topK?: number;
+  maxTemperature?: number;
+  error?: string;
+}
+
+export const validateGeminiKey = async (
+  apiKey: string
+): Promise<GeminiValidationResult> => {
+  if (!apiKey)
+    return { valid: false, error: "Missing API key. Provide a Gemini key." };
+  // Try model metadata first for each candidate model
+  for (const model of GEMINI_PRIMARY_MODELS) {
+    try {
+      const resp = await axios.get(`${GEMINI_BASE_URL}/${model}?key=${apiKey}`);
+      if (resp.status === 200 && resp.data) {
+        return { valid: true, model, ...resp.data };
+      }
+    } catch (err: any) {
+      const status = err.response?.status;
+      if (status === 401 || status === 403) {
+        return {
+          valid: false,
+          error: `Auth error (${status}). Check key permissions or quota.`,
+        };
+      }
+      // Continue on 404/400; try next model
+      continue;
+    }
+  }
+  return { valid: false, error: "No accessible Gemini model found." };
+};

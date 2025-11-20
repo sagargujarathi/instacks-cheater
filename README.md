@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Instacks Cheater Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Browser extension built with React + TypeScript + Vite that assists with exam interface interaction and AI answer generation.
 
-Currently, two official plugins are available:
+## Architecture Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+  content/            Content script logic
+    index.ts          Entry point & listeners
+    state.ts          Central prompt state (immutable replace pattern)
+    dom.ts            DOM extraction helpers (question metadata, option inputs)
+    notify.ts         Toast utility
+  services/
+    gemini-api.ts     Gemini provider implementation (IAIProvider)
+    openai-api.ts     OpenAI provider implementation (IAIProvider)
+    ai-service.ts     Provider factory + validation
+    ai-types.ts       Provider interface definitions
+    answer-utils.ts   Shared answer extraction
+  helpers/            High-level orchestration (generateAnswer, exam data)
+  pages/              Popup & terms UI
+  constants/          Keys, options and defaults
+  types/              Strong TypeScript models
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## AI Provider Abstraction
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Both Gemini and OpenAI implement `IAIProvider` with a single method:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```ts
+interface IAIProvider {
+  generateAnswer(question: Question): Promise<string>;
+}
 ```
+
+The factory (`ai-service.ts`) loads the chosen provider and API key from `chrome.storage.local`, supports dynamic key refresh, and exposes structured validation metadata for Gemini.
+
+## Answer Extraction
+
+`answer-utils.ts` applies strict regex patterns and guards against error text to prevent false positives. Only returns `option_#` if a clean single-letter answer is detected.
+
+## Content Script Modularization
+
+Large imperative logic was split into focused modules:
+
+- `state.ts` manages prompt state transitions (`setGenerating`, `setGenerated`, `resetPromptState`).
+- `dom.ts` isolates DOM queries (making it easier to adapt to layout changes).
+- `notify.ts` provides a lightweight toast system.
+- `index.ts` now coordinates extraction, generation, selection, and event wiring.
+
+## Validation & Feedback
+
+Popup performs provider validation and displays model metadata (token limits, version) for Gemini. OpenAI shows basic model info.
+
+## Development Commands
+
+```bash
+bun install
+bun run build   # Build extension
+bun dev         # Dev server for popup UI (if configured)
+```
+
+Load the `dist` (or project root if using manifest in place) into Chrome via `chrome://extensions` (Developer Mode → Load unpacked).
+
+## Best Practices Implemented
+
+- Strong typing replacing `any` where feasible.
+- Provider interface for future expansion (Anthropic, etc.).
+- Centralized state & side-effects minimal in content entry file.
+- Defensive regex & error filtering to avoid random selections.
+- Dynamic key refresh ensures latest user key is used.
+
+## Future Improvements
+
+- Model selection dropdown for Gemini/OpenAI.
+- Retry/backoff strategy with exponential delay on transient errors.
+- Telemetry (optional) for success/failure of generations (respecting privacy).
+- Unit tests for `answer-utils.ts` and provider factories.
+
+## Disclaimer
+
+Use responsibly and in compliance with all applicable rules and laws.

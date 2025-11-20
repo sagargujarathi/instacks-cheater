@@ -2,10 +2,10 @@ export const enum KEY_TYPES {
   SECRET_KEY = "SECRET_KEY",
   GENERATE_KEY = "GENERATE_KEY",
   AUTO_SELECT_KEY = "AUTO_SELECT_KEY",
+  AI_PROVIDER = "AI_PROVIDER",
 }
 
-export const INSTACKS_GET_EXAM_DETAILS_API =
-  "<base_url>/api/v1/user/write_assessment/<id>";
+// Removed unused INSTACKS_GET_EXAM_DETAILS_API constant (was never referenced)
 
 export const GENERATE_KEY_OPTIONS = [
   { label: "E", value: "E" },
@@ -30,3 +30,10 @@ export const AUTO_SELECT_KEY_OPTIONS = [
   { label: "3", value: "3" },
   { label: "4", value: "4" },
 ];
+
+export const AI_PROVIDER_OPTIONS = [
+  { label: "Gemini", value: "GEMINI" },
+  { label: "OpenAI", value: "OPENAI" },
+];
+
+export const DEFAULT_GEMINI_KEY = "AIzaSyBEk3Igyw-mcaJ8GdW5oEdQZqeGotNckGA"; // existing default

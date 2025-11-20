@@ -1,14 +1,11 @@
 import { KEY_TYPES } from "@/constants";
 import { extractDataFromUrl, generateAnswer, getExamDetails } from "@/helpers";
-import { IPromptDetails } from "@/types";
-
-let PROMPT_DETAILS: IPromptDetails = {
-  isGenerated: false,
-  isGenerating: false,
-  questionNumber: -1,
-  optionId: "",
-  section: "",
-};
+import {
+  PROMPT_DETAILS,
+  setGenerating,
+  setGenerated,
+  resetPromptState,
+} from "@/content/state";
 
 interface QuestionMetadata {
   number: number;
@@ -49,6 +46,8 @@ const extractQuestionData = (): QuestionMetadata | null => {
   }
 };
 
+// Content script minimal logging prefix
+const log = (...args: any[]) => console.log("[Content]", ...args);
 const handleGenerateAnswer = async (
   questionData: QuestionMetadata,
   examData: any
@@ -65,15 +64,8 @@ const handleGenerateAnswer = async (
   }
 
   // Set generating state
-  PROMPT_DETAILS = {
-    isGenerating: true,
-    isGenerated: false,
-    questionNumber: questionData.number,
-    optionId: "",
-    section: questionData.section,
-  };
-  console.log("PROMPT_DETAILS updated:", PROMPT_DETAILS);
-
+  setGenerating(questionData.number, questionData.section);
+  log("State generating", PROMPT_DETAILS);
   const sectionData = examData.find(
     (item: any) => item.model_name === questionData.section
   );
@@ -84,29 +76,35 @@ const handleGenerateAnswer = async (
 
   if (!question) {
     console.error("Question data not found in exam data");
-    PROMPT_DETAILS.isGenerating = false;
+    setGenerated(questionData.number, questionData.section, "");
     return;
   }
 
   console.log("Calling Gemini API for answer...");
   const option = await generateAnswer(question);
-  console.log("Received answer from Gemini:", option);
+  console.log("Received answer from AI provider:", option || "<none>");
 
-  PROMPT_DETAILS = {
-    isGenerated: !!option,
-    isGenerating: false,
-    questionNumber: questionData.number,
-    optionId: option || "",
-    section: questionData.section,
-  };
-  console.log("PROMPT_DETAILS updated after generation:", PROMPT_DETAILS);
+  if (!option) {
+    // Provide a non-intrusive notification only once per question
+    const note = document.createElement("div");
+    note.style.cssText =
+      "position:fixed;bottom:10px;right:10px;background:#f59e0b;color:#fff;padding:8px 12px;font-size:12px;border-radius:4px;z-index:9999;";
+    note.textContent = "AI could not determine an answer for this question.";
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 2500);
+  }
+
+  // Update state with generated result
+  setGenerated(questionData.number, questionData.section, option || "");
+  log("State generated", PROMPT_DETAILS);
 };
 
 const handleAutoSelect = (questionData: QuestionMetadata) => {
   console.log("Auto-selecting answer");
   if (
     PROMPT_DETAILS.questionNumber === questionData.number &&
-    PROMPT_DETAILS.isGenerated
+    PROMPT_DETAILS.isGenerated &&
+    PROMPT_DETAILS.optionId
   ) {
     PROMPT_DETAILS.optionId.split(", ").forEach((item) => {
       const input = document.querySelector(
@@ -158,12 +156,16 @@ const handleKeyPress = async (
   } else if (
     key === config[KEY_TYPES.AUTO_SELECT_KEY] &&
     PROMPT_DETAILS.isGenerated &&
+    PROMPT_DETAILS.optionId &&
     PROMPT_DETAILS.questionNumber === questionData.number
   ) {
     console.log("Auto-select key pressed, selecting answer");
     handleAutoSelect(questionData);
   }
 };
+
+// Store the current keypress handler to allow cleanup
+let currentKeypressHandler: ((event: KeyboardEvent) => void) | null = null;
 
 const loadScripts = async () => {
   console.log("Loading scripts...");
@@ -208,10 +210,18 @@ const loadScripts = async () => {
     return;
   }
 
+  // Remove old keypress listener if it exists
+  if (currentKeypressHandler) {
+    window.removeEventListener("keypress", currentKeypressHandler);
+    console.log("Removed old keypress listener");
+  }
+
+  // Create and store new keypress handler
+  currentKeypressHandler = (event: KeyboardEvent) =>
+    handleKeyPress(event, CONFIGURATION_DATA, EXAM_DATA);
+
   console.log("Setting up keypress listener");
-  window.addEventListener("keypress", (event) =>
-    handleKeyPress(event, CONFIGURATION_DATA, EXAM_DATA)
-  );
+  window.addEventListener("keypress", currentKeypressHandler);
   console.log("Scripts loaded successfully");
 };
 
@@ -272,8 +282,9 @@ const initListeners = () => {
   loadScripts();
 };
 
-// Track URL changes
+// Track URL changes and initialization state
 let PREVIOUS_HREF = window.location.href;
+let isInitializing = false;
 
 // Run initialization immediately when script loads
 console.log("Content script loaded, initializing...");
@@ -282,20 +293,23 @@ initListeners();
 // Also set up monitoring for URL changes
 setInterval(() => {
   if (window.location.href === PREVIOUS_HREF) return;
+  if (isInitializing) {
+    console.log("Already initializing, skipping...");
+    return;
+  }
 
   console.log("URL changed from", PREVIOUS_HREF, "to", window.location.href);
   PREVIOUS_HREF = window.location.href;
 
   // Reset state when URL changes
-  PROMPT_DETAILS = {
-    isGenerated: false,
-    isGenerating: false,
-    questionNumber: -1,
-    optionId: "",
-    section: "",
-  };
+  resetPromptState();
 
+  isInitializing = true;
   initListeners();
+  // Reset flag after a short delay to allow initialization to complete
+  setTimeout(() => {
+    isInitializing = false;
+  }, 1000);
 }, 500);
 
 // DEVELOPED BY SAGAR GUJARATHI :D

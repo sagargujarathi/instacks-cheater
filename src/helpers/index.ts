@@ -1,5 +1,11 @@
 import axios from "axios";
-import { getGeminiApi, initializeGeminiApi } from "@/services/gemini-api";
+import {
+  getAIService,
+  initializeAIService,
+  refreshAIService,
+} from "@/services/ai-service";
+import type { Question } from "@/types";
+import { IQuestionData } from "@/types";
 
 // Create a cache for storing generated answers
 const answerCache = new Map<string, string>();
@@ -118,7 +124,7 @@ export const getExamDetails = async (baseUrl: string, attemptId: string) => {
   }
 };
 
-export const generateAnswer = async (question: any) => {
+export const generateAnswer = async (question: Question) => {
   try {
     // Generate a cache key based on the question ID or content
     const cacheKey = question.id || JSON.stringify(question.question);
@@ -129,16 +135,20 @@ export const generateAnswer = async (question: any) => {
       return answerCache.get(cacheKey);
     }
 
-    // Initialize or get the Gemini API instance
-    let geminiApi;
+    // Always refresh service to ensure we use the correct provider
+    let aiService;
     try {
-      geminiApi = getGeminiApi();
+      aiService = getAIService();
+      // Refresh to pick up any provider/key changes
+      await refreshAIService();
+      aiService = getAIService();
     } catch (error) {
-      geminiApi = await initializeGeminiApi();
+      console.log("Initializing AI service for the first time");
+      aiService = await initializeAIService();
     }
 
-    // Generate the answer using Gemini API
-    const answer = await geminiApi.generateAnswer(question);
+    // Generate the answer using selected provider
+    const answer = await aiService.generateAnswer(question);
 
     // Store the answer in cache for future use
     if (answer) {
